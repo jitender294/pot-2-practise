@@ -1,0 +1,119 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    /* position: absolute; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #121212;
+}
+
+.bowl {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    /* background: red; */
+    border: 8px solid transparent;
+    /* top: 20px; */
+    animation: bowl 5s linear infinite;
+    transform-origin: bottom;
+    /* z-index: 1; */
+}
+
+@keyframes bowl {
+    0% {
+        filter: hue-rotate(0deg);
+        transform: rotate(0);
+    }
+    25% {
+        transform: rotate(15deg);
+    }
+    50% {
+        transform: rotate(0);
+    }
+    75% {
+        transform: rotate(-15deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+        transform: rotate(0);
+    }
+}
+
+.bowl::before {
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 100px;
+    left: 50%;
+    top: -3%;
+    transform: translate(-50%);
+    border-radius: 50%;
+    border: 10px solid #444;
+    box-shadow: 0 10px #222;
+}
+
+.bowl::after {
+    content: "";
+    position: absolute;
+    width: 110px;
+    height: 75px;
+    left: 50%;
+    transform: translate(-50%);
+    top: 30%;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+}
+
+.liquid {
+    position: absolute;
+    /* width: 95%;
+    height: 190px; */
+    top: 200px;
+    right: 10px;
+    left: 10px;
+    bottom: 10px;
+    /* transform: translate(-50%); */
+    /* top: 50%;
+    left: 7px; */
+    background: #41c1fb;
+    border-bottom-left-radius: 200px;
+    border-bottom-right-radius: 200px;
+    animation: liquid 5s linear infinite;
+    transform-origin: top;
+    filter: drop-shadow(0 0 80px #41c1fb);
+}
+
+@keyframes liquid {
+    0% {
+        transform: rotate(0);
+    }
+    25% {
+        transform: rotate(15deg);
+    }
+    50% {
+        transform: rotate(0);
+    }
+    75% {
+        transform: rotate(-15deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+.shadow {
+    position: absolute;
+    width: 500px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.5);
+    top: 83%;
+    border-radius: 50%;
+}
